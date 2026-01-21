@@ -1,0 +1,128 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --blue:#2563eb;
+  --blue2:#1d4ed8;
+  --soft:#fafafa;
+  --radius:14px;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  padding:24px;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+
+.card{
+  max-width:980px;
+  margin:0 auto;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:0 10px 34px rgba(0,0,0,.06);
+}
+
+.header{ margin-bottom:14px; }
+h1{ margin:0 0 6px; font-size:28px; }
+.h2{ margin:0 0 10px; font-size:18px; }
+.section{ margin-top:18px; }
+
+.label{
+  display:block;
+  font-weight:700;
+  font-size:13px;
+  margin:10px 0 6px;
+}
+
+textarea, input, select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-size:14px;
+  background:#fff;
+}
+
+textarea{ resize:vertical; min-height:140px; }
+
+.row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-top:10px;
+}
+
+.field{ min-width:180px; }
+
+button{
+  padding:10px 16px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--blue);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
+button:hover{ background:var(--blue2); }
+button.secondary{
+  background:#fff;
+  color:var(--text);
+}
+
+button:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+.box{
+  margin-top:14px;
+  padding:14px;
+  background:var(--soft);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+
+.list{
+  margin:10px 0 0 18px;
+  padding:0;
+}
+
+.muted{ color:var(--muted); }
+.small{ font-size:12.5px; }
+.foot{ margin-top:14px; text-align:center; }
+
+.progressWrap{ margin-top:12px; }
+.progressBar{
+  width:100%;
+  height:10px;
+  background:#eef2ff;
+  border-radius:999px;
+  overflow:hidden;
+  border:1px solid #dbeafe;
+}
+.progressFill{
+  height:100%;
+  width:0%;
+  background:var(--blue);
+  transition:width .15s ease;
+}
+
+@media (max-width: 820px){
+  .grid{ grid-template-columns: 1fr; }
+}
