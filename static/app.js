@@ -43,31 +43,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const li = document.createElement("li");
     li.textContent = txt;
     ul.appendChild(li);
-  // -------- PASTE BUTTON --------
-const pasteBtn = document.getElementById("pasteBtn");
-
-if (pasteBtn) {
-  pasteBtn.addEventListener("click", async () => {
-    try {
-      const clipText = await navigator.clipboard.readText();
-
-      if (!clipText) {
-        setStatus("Clipboard is empty.");
-        return;
-      }
-
-      const current = textEl.value.trim();
-      textEl.value = current ? (current + "\n\n" + clipText) : clipText;
-
-      setStatus("Pasted ✅");
-    } catch (err) {
-      console.error(err);
-      setStatus("Paste blocked ❌");
-    }
-  });
-}
-
   };
+  // -------- DARK MODE --------
+  const darkToggle = document.getElementById("darkToggle");
+
+  if (darkToggle) {
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  }
 
   function escapeHTML(str){
     return String(str).replace(/[&<>"']/g, (m) => ({
