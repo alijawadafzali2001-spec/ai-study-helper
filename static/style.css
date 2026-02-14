@@ -243,3 +243,37 @@ body.light .section{ background: rgba(255,255,255,.75); }
 body.light input, body.light textarea, body.light select{
   background:#fff;
 }
+
+.list {
+  margin:0;
+  padding-left:18px;
+}
+.list li{
+  margin:6px 0;
+}
+.highlight{
+  line-height: 1.6;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  write-space: pre-wrap;
+}
+
+mark {
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+body.dark {
+  background: #121212;
+  color: white;
+}
+body.dark .card {
+  background: #1e1e1e;
+}
+
+body.dark button {
+  background: #333;
+  color: white;
+}

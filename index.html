@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Study Helper</title>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="static/app.js"></script>
   <link rel="stylesheet" href="static/style.css" />
 </head>
@@ -14,6 +15,7 @@
     <header class="header">
       <h1>AI Study Helper</h1>
       <p class="muted">Paste text or upload an image → get a clean summary & strong keywords.</p>
+      <button id = "darkToggle">Dark Mode</button>
     </header>
 
     <!-- TOP: 2 columns -->
@@ -63,6 +65,7 @@
             <label class="label" for="mode">Mode</label>
             <select id="mode">
               <option value="free" selected>Free (local algorithm)</option>
+              <option value = "basic">Basic Summary</option>
               <option value="ai">AI (API later)</option>
             </select>
           </div>
@@ -71,6 +74,7 @@
         <div class="row">
           <button id="run" type="button">Run</button>
           <button id="clear" type="button" class="secondary">Clear</button>
+          <button id = "pasteBtn" type="button" class="secondary">Paste</button>
           <span id="status" class="muted small"></span>
         </div>
       </div>
@@ -78,10 +82,21 @@
 
     <!-- BOTTOM: OUTPUT -->
     <section class="section">
-      <div class="outputGrid">
+
+      <div class="box">
+        <h2 class="h2">Highlight Text</h2>
+        <div id="highlighted" class="highlightBox"></div>
+      </div>
+
         <div class="box">
           <h2 class="h2">Summary</h2>
           <ul id="summary" class="list"></ul>
+        </div>
+
+        <div class = "exportRow">
+          <button id = "copySummary" type="button">Copy</button>
+          <button id = "downloadTxt" type="button">Download TXT</button>
+          <button id = "downloadPDF" type="button">Download PDF</button>
         </div>
 
         <div class="box">
@@ -89,6 +104,11 @@
           <ul id="keywords" class="list"></ul>
         </div>
       </div>
+
+      <div class="box">
+          <h2 class="h2">Text Analysis</h2>
+          <ul id="stats" class="list"></ul>
+        </div>
 
       <p class="foot muted small">Local / Static • English-only • Free OCR • No Python</p>
     </section>
